@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Initial Commit 3">
-      <change beforePath="$PROJECT_DIR$/src/token.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/token.json" afterDir="false" />
+    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="More Initial Commits">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Empty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Sheesh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/RetroBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RetroBot.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +39,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/java/Bot/RetroBot.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1u8ZOEykR0XIeChN3rl94HqYOgg" />
@@ -44,11 +53,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\retro\Desktop\Random Code\RetroBot\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Bot.Commands" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="RetroBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RetroBot" />
+      <option name="MAIN_CLASS_NAME" value="Bot.RetroBot" />
       <module name="RetroBot" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624052082827</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="More Initial Commits">
+      <created>1624052289846</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624052289846</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,10 +128,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit 2" />
     <MESSAGE value="Initial Commit 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit 3" />
+    <MESSAGE value="More Initial Commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="More Initial Commits" />
   </component>
 </project>
