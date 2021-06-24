@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="More Initial Commits">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Empty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Sheesh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/RetroBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RetroBot.java" beforeDir="false" />
-    </list>
+    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Added JDA-Utils, implement basic commands, starting working on apex stats command" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624052289846</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added JDA-Utils, implement basic commands, starting working on apex stats command">
+      <created>1624492283018</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624492283019</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +131,7 @@
     <MESSAGE value="Initial Commit 2" />
     <MESSAGE value="Initial Commit 3" />
     <MESSAGE value="More Initial Commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="More Initial Commits" />
+    <MESSAGE value="Added JDA-Utils, implement basic commands, starting working on apex stats command" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added JDA-Utils, implement basic commands, starting working on apex stats command" />
   </component>
 </project>
