@@ -1,7 +1,6 @@
 package Bot;
 
 import Bot.Commands.ApexStats;
-import Bot.Commands.Empty;
 import Bot.Commands.Sheesh;
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
@@ -25,7 +24,7 @@ public class RetroBot {
     public static void main(String[] args) throws Exception {
 
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src/token.json"));
+        Object obj = parser.parse(new FileReader("src/resources/token.json"));
         JSONObject jsonObject = (JSONObject)obj;
         String token = (String)jsonObject.get("token");
         String ownerId = (String)jsonObject.get("owner ID");
@@ -51,7 +50,6 @@ public class RetroBot {
 
     private static void addCommands() {
         builder.addCommand(new Sheesh());
-        builder.addCommand(new Empty());
         builder.addCommand(new ApexStats());
 
     }

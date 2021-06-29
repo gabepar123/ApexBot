@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Added JDA-Utils, implement basic commands, starting working on apex stats command" />
+    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Added JDA-Utils, implement basic commands, starting working on apex stats command">
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/RankEmoji.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/Tracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Empty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/RetroBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/RetroBot.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +56,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\retro\Desktop\Random Code\RetroBot\src\resources" />
       <recent name="C:\Users\retro\Desktop\Random Code\RetroBot\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -112,7 +121,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624492283019</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added JDA-Utils, implement basic commands, starting working on apex stats command">
+      <created>1624492817322</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624492817322</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added JDA-Utils, implement basic commands, starting working on apex stats command">
+      <created>1624492848543</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624492848543</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
