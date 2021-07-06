@@ -1,10 +1,14 @@
 package Bot.Commands.Stats;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import org.jetbrains.annotations.NotNull;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.awt.*;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class PlayerStatHandler {
 
@@ -16,13 +20,17 @@ public class PlayerStatHandler {
     private final String selectLegend;
     private final JSONObject playerStats;
     private final boolean isOnline;
+    private final String avatarURL;
     private final Tracker t1;
     private final Tracker t2;
     private final Tracker t3;
+    private final String badge1;
+    private final String badge2;
+    private final String badge3;
     private final EmbedBuilder eb;
 
 
-    public PlayerStatHandler(JSONObject playerStats) {
+    public PlayerStatHandler(JSONObject playerStats)  {
 
         this.playerStats = playerStats;
         this.user = setUser();
@@ -32,11 +40,39 @@ public class PlayerStatHandler {
         this.selectLegend = setSelectedLegend();
         this.battlePassLevel = setBattlePassLevel();
         this.isOnline = setIsOnline();
+        this.avatarURL = setAvatar();
         this.t1 = setTracker(0);
         this.t2 = setTracker(1);
         this.t3 = setTracker(2);
+        this.badge1 = setBadge(0);
+        this.badge2 = setBadge(1);
+        this.badge3 = setBadge(2);
         this.eb = setEb();
 
+    }
+
+    private String setAvatar() {
+
+        JSONObject global = (JSONObject) playerStats.get("global");
+        return (String) global.get("avatar");
+
+    }
+
+    private String setBadge(int i) {
+
+        JSONObject legends = (JSONObject) playerStats.get("legends");
+        JSONObject selected = (JSONObject) legends.get("selected");
+        JSONObject gameInfo = (JSONObject) selected.get("gameInfo");
+        JSONArray badgeArr = (JSONArray) gameInfo.get("badges");
+        if (badgeArr.size() <= i ){
+            return "N/A";
+        }
+
+        JSONObject currBadge = (JSONObject) badgeArr.get(i);
+        String badgeName = (String) currBadge.get("name");
+        if (badgeName == null)
+            return "N/A";
+        return badgeName;
     }
 
     private boolean setIsOnline() {
@@ -121,21 +157,44 @@ public class PlayerStatHandler {
         eb.setTitle("Stats for " + user);
         eb.addField("Name", user, true);
         eb.addField("Platform", platform, true);
+        String onlineEmote = getOnlineEmote();
+        eb.addField("Online", onlineEmote, true);
         eb.addField("Level", level, false);
         eb.addField("BattlePass Tier", battlePassLevel, false);
         String rankEmoji = new RankEmoji(rank).getRankEmojiId();
         eb.addField("Rank",rankEmoji + rank, true);
         eb.addField("Selected Legend",selectLegend, true);
-        eb.addField("Trackers","\u200b", false);
+        eb.addField("","**Trackers**", false);
         eb.addField(t1.getName(),String.valueOf(t1.getValue()), true);
         eb.addField(t2.getName(),String.valueOf(t2.getValue()), true);
         eb.addField(t3.getName(),String.valueOf(t3.getValue()), true);
+        eb.addField("","**Badges**", false);
+        eb.setThumbnail(avatarURL);
+        eb.addField(badge1,"", false);
+        eb.addField(badge2,"", false);
+        eb.addField(badge3,"", false);
+        //String footerURL = getFooterImageUrl();
+        eb.setFooter("Any inaccuracies are most likely due to the limited information that EA gives us on player profiles.", "https://i.imgur.com/PZE9HyU.png");
 
 
 
         eb.setColor(Color.RED);
         return eb;
 
+    }
+
+    private String getFooterImageUrl() throws MalformedURLException {
+        File footerImage = new File("attachment://src/resources/apexlogo.jpg");
+        String footerURL = footerImage.toURI().toURL().toString();
+       // footerURL = footerURL.replace("file", "attachment");
+        System.out.println(footerURL);
+        return "attachment://src/resources/apexlogo.jpg";
+    }
+
+    private String getOnlineEmote() {
+        String onlineEmote = ":white_check_mark:";
+        if (!isOnline) onlineEmote = ":x:";
+        return onlineEmote;
     }
 
     public String getUser() {
@@ -176,6 +235,22 @@ public class PlayerStatHandler {
 
     public Tracker getT3() {
         return t3;
+    }
+
+    public String getAvatarURL() {
+        return avatarURL;
+    }
+
+    public String getBadge1() {
+        return badge1;
+    }
+
+    public String getBadge2() {
+        return badge2;
+    }
+
+    public String getBadge3() {
+        return badge3;
     }
 
     @Override

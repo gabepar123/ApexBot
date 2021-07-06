@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Added JDA-Utils, implement basic commands, starting working on apex stats command">
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/RankEmoji.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/Tracker.java" afterDir="false" />
+    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Finishing up ApexStats command embed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Empty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Bot/RetroBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/RetroBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624492848543</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="PlayerStatHandler for holding the current requests, Tracker Class to hold each tracker, and a RankEmoji class to make finding the correct emoji simpler">
+      <created>1624943709276</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624943709276</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +157,8 @@
     <MESSAGE value="Initial Commit 3" />
     <MESSAGE value="More Initial Commits" />
     <MESSAGE value="Added JDA-Utils, implement basic commands, starting working on apex stats command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JDA-Utils, implement basic commands, starting working on apex stats command" />
+    <MESSAGE value="PlayerStatHandler for holding the current requests, Tracker Class to hold each tracker, and a RankEmoji class to make finding the correct emoji simpler" />
+    <MESSAGE value="Finishing up ApexStats command embed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing up ApexStats command embed" />
   </component>
 </project>
