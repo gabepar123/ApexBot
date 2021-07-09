@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Finishing up ApexStats command embed">
+    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Finished ApexStats command, and ApexNews command">
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexNews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/RankEmoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/RankEmoji.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/Tracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/Tracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/RetroBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/ApexBot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +38,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/java/Bot/RetroBot.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/java/Bot/ApexBot.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1u8ZOEykR0XIeChN3rl94HqYOgg" />
@@ -54,21 +60,24 @@
       <recent name="C:\Users\retro\Desktop\Random Code\RetroBot\src\resources" />
       <recent name="C:\Users\retro\Desktop\Random Code\RetroBot\src" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="Bot.Commands" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Bot.Commands" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="RetroBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Bot.RetroBot" />
-      <module name="RetroBot" />
+    <configuration name="ApexBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Bot.ApexBot" />
+      <module name="ApexBot" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RetroBot" />
+        <item itemvalue="Application.ApexBot" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624943709276</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Finishing up ApexStats command embed">
+      <created>1625548036299</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625548036299</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +175,7 @@
     <MESSAGE value="Added JDA-Utils, implement basic commands, starting working on apex stats command" />
     <MESSAGE value="PlayerStatHandler for holding the current requests, Tracker Class to hold each tracker, and a RankEmoji class to make finding the correct emoji simpler" />
     <MESSAGE value="Finishing up ApexStats command embed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing up ApexStats command embed" />
+    <MESSAGE value="Finished ApexStats command, and ApexNews command" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished ApexStats command, and ApexNews command" />
   </component>
 </project>

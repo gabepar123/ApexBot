@@ -1,15 +1,14 @@
 package Bot.Commands.Stats;
 
 import net.dv8tion.jda.api.EmbedBuilder;
-import org.jetbrains.annotations.NotNull;
+import net.dv8tion.jda.api.entities.MessageEmbed;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.awt.*;
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 
+//Puts a players stats into its own class
+//the only public method is getEb(), as anything else will probably not do what you want it to do
 public class PlayerStatHandler {
 
     private final String user;
@@ -27,8 +26,7 @@ public class PlayerStatHandler {
     private final String badge1;
     private final String badge2;
     private final String badge3;
-    private final EmbedBuilder eb;
-
+    private final MessageEmbed eb;
 
     public PlayerStatHandler(JSONObject playerStats)  {
 
@@ -148,48 +146,43 @@ public class PlayerStatHandler {
         return new Tracker(name, value);
     }
 
-    public EmbedBuilder getEb() {
+    public MessageEmbed getEb() {
         return eb;
     }
 
-    private EmbedBuilder setEb() {
+    //creates the embed for the player's stats
+    private MessageEmbed setEb() {
         EmbedBuilder eb = new EmbedBuilder();
+        eb.setAuthor("Apex Bot", null, "https://i.imgur.com/Cj5QZd8.jpg");
         eb.setTitle("Stats for " + user);
         eb.addField("Name", user, true);
         eb.addField("Platform", platform, true);
         String onlineEmote = getOnlineEmote();
         eb.addField("Online", onlineEmote, true);
-        eb.addField("Level", level, false);
-        eb.addField("BattlePass Tier", battlePassLevel, false);
+        eb.addField("Level", level, true);
+        eb.addField("BattlePass Tier", battlePassLevel, true);
         String rankEmoji = new RankEmoji(rank).getRankEmojiId();
         eb.addField("Rank",rankEmoji + rank, true);
-        eb.addField("Selected Legend",selectLegend, true);
+        eb.addField("Selected Legend", selectLegend, true);
         eb.addField("","**Trackers**", false);
         eb.addField(t1.getName(),String.valueOf(t1.getValue()), true);
         eb.addField(t2.getName(),String.valueOf(t2.getValue()), true);
         eb.addField(t3.getName(),String.valueOf(t3.getValue()), true);
         eb.addField("","**Badges**", false);
-        eb.setThumbnail(avatarURL);
+        if (!avatarURL.equals("Not available"))
+            eb.setThumbnail(avatarURL);
         eb.addField(badge1,"", false);
         eb.addField(badge2,"", false);
         eb.addField(badge3,"", false);
-        //String footerURL = getFooterImageUrl();
-        eb.setFooter("Any inaccuracies are most likely due to the limited information that EA gives us on player profiles.", "https://i.imgur.com/PZE9HyU.png");
+        eb.setFooter("Any inaccuracies are likely due to the limited information that EA gives us on player profiles.", "https://i.imgur.com/Cj5QZd8.jpg");
 
 
 
         eb.setColor(Color.RED);
-        return eb;
+        return eb.build();
 
     }
 
-    private String getFooterImageUrl() throws MalformedURLException {
-        File footerImage = new File("attachment://src/resources/apexlogo.jpg");
-        String footerURL = footerImage.toURI().toURL().toString();
-       // footerURL = footerURL.replace("file", "attachment");
-        System.out.println(footerURL);
-        return "attachment://src/resources/apexlogo.jpg";
-    }
 
     private String getOnlineEmote() {
         String onlineEmote = ":white_check_mark:";
@@ -197,59 +190,59 @@ public class PlayerStatHandler {
         return onlineEmote;
     }
 
-    public String getUser() {
+    private String getUser() {
         return user;
     }
 
-    public String getPlatform() {
+    private String getPlatform() {
         return platform;
     }
 
-    public String getRank() {
+    private String getRank() {
         return rank;
     }
 
-    public String getLevel() {
+    private String getLevel() {
         return level;
     }
 
-    public String getSelectLegend() {
+    private String getSelectLegend() {
         return selectLegend;
     }
 
-    public boolean isOnline() {
+    private boolean isOnline() {
         return isOnline;
     }
 
-    public String getBattlePassLevel() {
+    private String getBattlePassLevel() {
         return battlePassLevel;
     }
 
-    public Tracker getT1() {
+    private Tracker getT1() {
         return t1;
     }
 
-    public Tracker getT2() {
+    private Tracker getT2() {
         return t2;
     }
 
-    public Tracker getT3() {
+    private Tracker getT3() {
         return t3;
     }
 
-    public String getAvatarURL() {
+    private String getAvatarURL() {
         return avatarURL;
     }
 
-    public String getBadge1() {
+    private String getBadge1() {
         return badge1;
     }
 
-    public String getBadge2() {
+    private String getBadge2() {
         return badge2;
     }
 
-    public String getBadge3() {
+    private String getBadge3() {
         return badge3;
     }
 
@@ -263,9 +256,13 @@ public class PlayerStatHandler {
                 ", battlePassLevel='" + battlePassLevel + '\'' +
                 ", selectLegend='" + selectLegend + '\'' +
                 ", isOnline=" + isOnline +
+                ", avatarURL='" + avatarURL + '\'' +
                 ", t1=" + t1 +
                 ", t2=" + t2 +
                 ", t3=" + t3 +
+                ", badge1='" + badge1 + '\'' +
+                ", badge2='" + badge2 + '\'' +
+                ", badge3='" + badge3 + '\'' +
                 '}';
     }
 }

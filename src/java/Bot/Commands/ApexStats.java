@@ -1,13 +1,17 @@
 package Bot.Commands;
 
+import Bot.ApexBot;
 import Bot.Commands.Stats.PlayerStatHandler;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import java.awt.*;
 import java.io.FileReader;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -19,11 +23,11 @@ public class ApexStats extends Command {
     static String defaultURL = "https://api.mozambiquehe.re/bridge?version=5&platform={platform}&player={user}";
 
     public ApexStats(){
-        this.name  = "astats";
-        this.aliases = new String[]{"apexstats"};
+        this.name  = "stats";
+        this.aliases = new String[]{"apexstats", "stats", "as", "astats"};
         this.arguments = "[user] [platform(PC/XBOX/PSN)]";
         //TODO
-        //this.help = "Gives "
+        this.help = "Displays a user's Apex Stats.";
     }
 
     @Override
@@ -31,41 +35,55 @@ public class ApexStats extends Command {
 
         String message = event.getMessage().getContentRaw();
         String content = message.substring(message.indexOf(' ') + 1).toLowerCase().trim();
-        String regex = "([a-zA-Z0-9_-]+ (pc|xbox|psn))";
+        String regex = "([ a-zA-Z0-9_-]+ (pc|xbox|psn))";
+        MessageEmbed embed;
         if (!content.matches(regex)){
-            event.reply("Usage: " + this.arguments);
+            embed = createEmbed("Invalid usage!", "**Usage:** [user] [platform(PC/XBOX/PSN)]\n**Ex:** a!stats Rogue_NRG PC");
+            event.getMessage().replyEmbeds(embed).queue();
             return;
         }
 
+        embed = createEmbed("Fetching account stats, please wait...", "");
+        Message response = event.getMessage().replyEmbeds(embed).complete();
+
         String stringURL = getURL(content);
-        //TODO check if the username actually exists
+        //try to get the players stats
         try {
             JSONObject playerStats = getStats(stringURL);
 
-
-            //TODO remove this pretty JSON
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String prettyJson = gson.toJson(playerStats);
-            System.out.println(prettyJson);
-
-            System.out.println(new PlayerStatHandler(playerStats).toString());
+            System.out.println(playerStats);
 
             PlayerStatHandler stats = new PlayerStatHandler(playerStats);
-            event.reply(stats.getEb().build());
 
+            response.editMessageEmbeds(stats.getEb()).queue();
 
         } catch (Exception e) {
             e.printStackTrace();
-            event.reply("Error Finding Player stats, this probably isn't your fault, please try again later");
+            System.out.println(e.getMessage());
+            int error = Integer.parseInt(e.getMessage());
+            if (error >= 400 & error < 500) {
+                embed = createEmbed(":x:Account not found!",
+                        "If you are attempting to find a PC player's account, make sure you are using the ORIGIN username, not STEAM.");
+            }
+            else if (error >= 500){
+                embed = createEmbed(":x:Error Finding Player stats, this probably isn't your fault, please try again later", ":frowning:");
+            }
+            response.editMessageEmbeds(embed).queue();
         }
 
     }
 
     //returns URL with the given user and platform
     private String getURL(String content) {
-        String[] args = content.split("\\s+");
-        String user = args[0];
-        String platform = getPlatform(args[1]);
+        //String[] args = new String[2];
+        int index = content.lastIndexOf(" ");
+        String user = content.substring(0,index);
+        if (user.contains(" ")) user = user.replace(" ", "%20");
+        String tempPlatform = content.substring(index + 1);
+        System.out.println(tempPlatform);
+        String platform = getPlatform(tempPlatform);
+        System.out.println(user);
+       // System.out.println(platform);
 
 
         String stringURL = defaultURL;
@@ -76,7 +94,8 @@ public class ApexStats extends Command {
 
     //Returns JSONObject received from the API
     private JSONObject getStats(String stringURL) throws Exception {
-        String APIkey = getAPIKey();
+
+        String APIkey = ApexBot.getAPIKey();
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(stringURL))
@@ -84,6 +103,9 @@ public class ApexStats extends Command {
                 .build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        int statusCode = response.statusCode();
+
+        if (statusCode >= 400) throw new Exception(String.valueOf(statusCode));
 
         JSONParser parser = new JSONParser();
         return (JSONObject)parser.parse(response.body());
@@ -101,43 +123,13 @@ public class ApexStats extends Command {
 
     }
 
-    //gets api auth key from json file
-    private String getAPIKey() throws Exception {
+    //returns an  embed with given title and body
+    private MessageEmbed createEmbed(String title, String body){
 
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src/resources/token.json"));
-        JSONObject jsonObject = (JSONObject)obj;
-        return (String)jsonObject.get("AL API KEY");
-
+        EmbedBuilder eb = new EmbedBuilder();
+        eb.addField(title, body, true);
+        eb.setColor(Color.RED);
+        return eb.build();
     }
 
-    private void createEmbed(JSONObject rawStats){
-
-
-    }
-
-
-
-
-
-
-
-    /* URL url = null;
-            try {
-                url = new URL("https://public-api.tracker.gg/v2/apex/standard/profile/psn/Daltoosh");
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                String key = "3027fcd8-4ea8-4778-a008-4a733dcd518b";
-
-                connection.setRequestProperty("TRN-Api-Key", key);
-                connection.setRequestMethod("GET");
-
-
-                int status = connection.getResponseCode();
-                System.out.println(status);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-     */
 }

@@ -1,5 +1,6 @@
 package Bot.Commands.Stats;
 
+//Stores  name and Value of a player's Trackers
 public class Tracker {
 
     private String name;

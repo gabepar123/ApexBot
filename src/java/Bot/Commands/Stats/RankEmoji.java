@@ -1,8 +1,10 @@
 package Bot.Commands.Stats;
 
+
+//This just finds the correct Emoji ID depending on the riven rank
 public class RankEmoji {
 
-    private String rankEmojiId;
+    private final String rankEmojiId;
 
     public RankEmoji(String rank){
 
@@ -14,7 +16,6 @@ public class RankEmoji {
     }
 
     private String setRankEmojiId(String rank) {
-        this.rankEmojiId = rankEmojiId;
 
         return switch (rank) {
             case "Bronze 1" -> "<:bronze1:858922286220312576>";
