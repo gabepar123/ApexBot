@@ -16,7 +16,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import java.awt.*;
+import java.awt.Color;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class ApexNews extends Command implements EventListener {
 
-    String url = "https://api.mozambiquehe.re/news?lang=en-us";
+    String APIurl = "https://api.mozambiquehe.re/news?lang=en-us";
     String leftArrow = "U+2B05";
     String rightArrow = "U+27A1";
     JSONArray jsonNewsArray;
@@ -33,7 +33,6 @@ public class ApexNews extends Command implements EventListener {
 
     public ApexNews() throws Exception {
         this.name  = "news";
-        //TODO
         this.help = "Displays the latest news in Apex!";
         this.jsonNewsArray = getNews();
         this.maxNewsLength = jsonNewsArray.size();
@@ -42,18 +41,22 @@ public class ApexNews extends Command implements EventListener {
     @Override
     protected void execute(CommandEvent event) {
 
+        MessageEmbed embed  = createEmbed("Fetching apex news, please wait...","");
+        Message response = event.getChannel().sendMessageEmbeds(embed).complete();
+
         try {
             jsonNewsArray = getNews();
             maxNewsLength = jsonNewsArray.size();
 
             Button back = Button.primary("apexnews:index:0", Emoji.fromMarkdown(leftArrow)).asDisabled();
             Button forward = Button.primary("apexnews:index:2", Emoji.fromMarkdown(rightArrow));
-            Message response = event.getChannel().sendMessageEmbeds(getNewsEmbed(1)).setActionRow(back,forward).complete();
+            response.editMessageEmbeds(getNewsEmbed(1)).setActionRow(back,forward).complete();
 
 
         } catch (Exception e) {
-            MessageEmbed embed  = createEmbed(":x:Error fetching Apex News, please try again later", ":frowning:");
-            event.reply(embed);
+            System.out.println(e.getMessage());
+            embed  = createEmbed(":x:Error fetching Apex News, please try again later", ":frowning:");
+            response.editMessageEmbeds(embed).queue();
         }
 
     }
@@ -68,7 +71,7 @@ public class ApexNews extends Command implements EventListener {
 
         }
     }
-
+    //creates a list of buttons depending on which index of the news they are on
     private ArrayList<Button> getButtons(int index) {
         boolean backDisabled = false;
         boolean frontDisabled = false;
@@ -91,18 +94,20 @@ public class ApexNews extends Command implements EventListener {
         return buttonArrayList;
     }
 
+    //returns an int index from the button's ID (aka the last few characters after the final ':', ex apexnews:index:12
     private int getIndex(String ID){
         int index = Integer.parseInt(ID.substring(ID.lastIndexOf(':') + 1));
         if (index <= 0) return 1;
         return index;
     }
 
+    //requests news from the api
     private JSONArray getNews() throws Exception {
 
         String APIkey = ApexBot.getAPIKey();
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url))
+                .uri(URI.create(APIurl))
                 .setHeader("Authorization", APIkey)
                 .build();
 
@@ -115,6 +120,7 @@ public class ApexNews extends Command implements EventListener {
         return (JSONArray)parser.parse(response.body());
     }
 
+    //creates the embed that displays the news, and adds the buttons
     private MessageEmbed getNewsEmbed(int i){
         EmbedBuilder eb = new EmbedBuilder();
 
@@ -136,7 +142,7 @@ public class ApexNews extends Command implements EventListener {
 
         EmbedBuilder eb = new EmbedBuilder();
         eb.addField(title, body, true);
-        eb.setColor(Color.RED);
+        eb.setColor(Color.blue);
         return eb.build();
     }
 

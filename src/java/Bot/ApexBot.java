@@ -1,8 +1,6 @@
 package Bot;
 
-import Bot.Commands.ApexNews;
-import Bot.Commands.ApexStats;
-import Bot.Commands.Sheesh;
+import Bot.Commands.*;
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -54,15 +52,15 @@ public class ApexBot extends ListenerAdapter {
         builder.setStatus(OnlineStatus.DO_NOT_DISTURB);
         builder.setHelpWord("help");
         builder.setPrefix("a?");
-
-
     }
 
     private static void addCommands() throws Exception {
-        builder.addCommand(new Sheesh());
         builder.addCommand(new ApexStats());
         builder.addCommand(new ApexNews());
-
+        builder.addCommand(new MapRotation());
+        builder.addCommand(new RandomLegend());
+        builder.addCommand(new RandomLoadout());
+        builder.addCommand(new RandomTeam());
     }
 
     //returns api key for various commands

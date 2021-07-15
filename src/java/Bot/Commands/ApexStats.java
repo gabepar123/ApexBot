@@ -4,6 +4,7 @@ import Bot.ApexBot;
 import Bot.Commands.Stats.PlayerStatHandler;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
+
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageEmbed;
@@ -11,8 +12,7 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import java.awt.*;
-import java.io.FileReader;
+import java.awt.Color;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -24,9 +24,8 @@ public class ApexStats extends Command {
 
     public ApexStats(){
         this.name  = "stats";
-        this.aliases = new String[]{"apexstats", "stats", "as", "astats"};
+        this.aliases = new String[]{"apexstats", "stats", "as", "astats", "s"};
         this.arguments = "[user] [platform(PC/XBOX/PSN)]";
-        //TODO
         this.help = "Displays a user's Apex Stats.";
     }
 
@@ -58,7 +57,6 @@ public class ApexStats extends Command {
             response.editMessageEmbeds(stats.getEb()).queue();
 
         } catch (Exception e) {
-            e.printStackTrace();
             System.out.println(e.getMessage());
             int error = Integer.parseInt(e.getMessage());
             if (error >= 400 & error < 500) {

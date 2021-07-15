@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import java.awt.*;
+import java.awt.Color;
 
 //Puts a players stats into its own class
 //the only public method is getEb(), as anything else will probably not do what you want it to do

@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Finished ApexStats command, and ApexNews command">
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexNews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/MapRotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomLegend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomLoadout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomTeam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/ApexBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/ApexBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/ApexNews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexNews.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Sheesh.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/RankEmoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/RankEmoji.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/Tracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/Tracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Bot/RetroBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/ApexBot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625548036299</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finished ApexStats command, and ApexNews command">
+      <created>1625868755045</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1625868755045</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
