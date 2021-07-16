@@ -35,10 +35,10 @@ public class RandomLoadout extends Command {
 
     private MessageEmbed getEmbed(String primary, String secondary){
         EmbedBuilder eb = new EmbedBuilder();
-        eb.setTitle("Random Loadout:");
+        eb.setTitle(":gun: Random Loadout:");
         eb.addField("Primary", primary, false);
         eb.addField("Secondary", secondary, false);
-        eb.setFooter("Good Luck!");
+        eb.setFooter("Enjoy!");
         eb.setColor(Color.red);
         return eb.build();
 

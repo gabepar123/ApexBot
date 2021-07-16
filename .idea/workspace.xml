@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Finished ApexStats command, and ApexNews command">
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/MapRotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomLegend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomLoadout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomTeam.java" afterDir="false" />
+    <list default="true" id="e4970766-1198-41d3-8d51-1949519ccb4b" name="Default Changelist" comment="Added Help and Ping commands.">
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Help.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Ping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/Bot/ApexBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/ApexBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/ApexNews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexNews.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/ApexStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Sheesh.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/RandomLegend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomLegend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/RandomLoadout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomLoadout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/RandomTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/RandomTeam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Bot/Commands/Stats/PlayerStatHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625868755045</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added various very simple commands">
+      <created>1626383029817</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1626383029817</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +191,8 @@
     <MESSAGE value="PlayerStatHandler for holding the current requests, Tracker Class to hold each tracker, and a RankEmoji class to make finding the correct emoji simpler" />
     <MESSAGE value="Finishing up ApexStats command embed" />
     <MESSAGE value="Finished ApexStats command, and ApexNews command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished ApexStats command, and ApexNews command" />
+    <MESSAGE value="Added various very simple commands" />
+    <MESSAGE value="Added Help and Ping commands." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Help and Ping commands." />
   </component>
 </project>

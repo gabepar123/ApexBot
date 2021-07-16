@@ -50,8 +50,6 @@ public class ApexStats extends Command {
         try {
             JSONObject playerStats = getStats(stringURL);
 
-            System.out.println(playerStats);
-
             PlayerStatHandler stats = new PlayerStatHandler(playerStats);
 
             response.editMessageEmbeds(stats.getEb()).queue();
@@ -73,16 +71,11 @@ public class ApexStats extends Command {
 
     //returns URL with the given user and platform
     private String getURL(String content) {
-        //String[] args = new String[2];
         int index = content.lastIndexOf(" ");
         String user = content.substring(0,index);
         if (user.contains(" ")) user = user.replace(" ", "%20");
         String tempPlatform = content.substring(index + 1);
-        System.out.println(tempPlatform);
         String platform = getPlatform(tempPlatform);
-        System.out.println(user);
-       // System.out.println(platform);
-
 
         String stringURL = defaultURL;
         stringURL = stringURL.replace("{platform}", platform);

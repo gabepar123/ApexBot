@@ -7,13 +7,12 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class RandomTeam extends Command {
 
     String[] legends = {"Bangalore", "Bloodhound", "Caustic", "Crypto", "Fuse", "Gibraltar", "Horizon", "LIfeline", "Loba",
-            "Mirage", "Octane", "Pathfinder", "Rampart", "Revenant", "Valkyrie", "Wattons", "Wraith"};
+            "Mirage", "Octane", "Pathfinder", "Rampart", "Revenant", "Valkyrie", "Watton", "Wraith"};
 
     String[] guns = {"Bocek Bow", "EVA-8", "Kraber", "Peacekeeper", "Prowler", "R-301 Carbine", "R-99", "Spitfire",
             "Charge Rifle", "Flatline", "G7 Scout", "Havoc", "Mastiff", "Sentinel", "Triple Take", "Volt", "Wingman",
@@ -28,7 +27,6 @@ public class RandomTeam extends Command {
     @Override
     protected void execute(CommandEvent event) {
         ArrayList<Integer> legendList = getRandomLegend();
-        System.out.println(Arrays.toString(legendList.toArray()));
         String l1 = this.legends[legendList.get(0)];
         String l2 = this.legends[legendList.get(1)];
         String l3 = this.legends[legendList.get(2)];
@@ -73,17 +71,17 @@ public class RandomTeam extends Command {
         EmbedBuilder eb = new EmbedBuilder();
 
         eb.setTitle("Your Random Team:");
-        eb.addField("", "**Players 1**", false);
+        eb.addField("", "**Player :one:**", false);
         eb.addField("Legend", l1, true);
         eb.addField("Primary", guns[0], true);
         eb.addField("Secondary", guns[1], true);
 
-        eb.addField("", "**Players 2**", false);
+        eb.addField("", "**Player :two:**", false);
         eb.addField("Legend", l2, true);
         eb.addField("Primary", guns[2], true);
         eb.addField("Secondary", guns[3], true);
 
-        eb.addField("", "**Players 3**", false);
+        eb.addField("", "**Player :three:**", false);
         eb.addField("Legend", l3, true);
         eb.addField("Primary", guns[4], true);
         eb.addField("Secondary", guns[5], true);

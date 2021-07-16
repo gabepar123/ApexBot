@@ -174,7 +174,7 @@ public class PlayerStatHandler {
         eb.addField(badge1,"", false);
         eb.addField(badge2,"", false);
         eb.addField(badge3,"", false);
-        eb.setFooter("Any inaccuracies are likely due to the limited information that EA gives us on player profiles.", "https://i.imgur.com/Cj5QZd8.jpg");
+        eb.setFooter("Any inaccuracies are likely due to the limited information that EA gives us on player profiles. Contact Retro#4670 for an issues.", "https://i.imgur.com/Cj5QZd8.jpg");
 
 
 

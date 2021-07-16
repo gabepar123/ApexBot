@@ -6,6 +6,7 @@ import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -17,9 +18,6 @@ public class ApexBot extends ListenerAdapter {
     public static JDA jda;
     public static CommandClientBuilder builder;
 
-    public ApexBot() {
-        //TODO something?
-    }
 
     public static void main(String[] args) throws Exception {
 
@@ -49,18 +47,21 @@ public class ApexBot extends ListenerAdapter {
     private static void makeCommandBuilder(String ownerId) {
         builder = new CommandClientBuilder();
         builder.setOwnerId(ownerId);
-        builder.setStatus(OnlineStatus.DO_NOT_DISTURB);
-        builder.setHelpWord("help");
+        builder.setActivity(Activity.listening("Type a?help!"));
+        builder.useHelpBuilder(false);
         builder.setPrefix("a?");
     }
 
     private static void addCommands() throws Exception {
+        //add about me
         builder.addCommand(new ApexStats());
         builder.addCommand(new ApexNews());
         builder.addCommand(new MapRotation());
         builder.addCommand(new RandomLegend());
         builder.addCommand(new RandomLoadout());
         builder.addCommand(new RandomTeam());
+        builder.addCommand(new Help());
+        builder.addCommand(new Ping());
     }
 
     //returns api key for various commands

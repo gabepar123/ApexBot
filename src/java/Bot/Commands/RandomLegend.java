@@ -12,7 +12,7 @@ import java.util.Random;
 public class RandomLegend extends Command {
 
     String[] legends = {"Bangalore", "Bloodhound", "Caustic", "Crypto", "Fuse", "Gibraltar", "Horizon", "LIfeline", "Loba",
-                                    "Mirage", "Octane", "Pathfinder", "Rampart", "Revenant", "Valkyrie", "Wattons", "Wraith"};
+                                    "Mirage", "Octane", "Pathfinder", "Rampart", "Revenant", "Valkyrie", "Watton", "Wraith"};
 
     String img = "https://api.mozambiquehe.re/assets/icons/{legend}.png";
 
